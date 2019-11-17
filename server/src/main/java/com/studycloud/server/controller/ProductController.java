@@ -72,7 +72,7 @@ public class ProductController {
        return productService.findByProductIdIn(productIdList);
     }
 
-    @PostMapping("/desStock")
+    @PostMapping("/decreaseStock")
     public String desStock(@RequestBody List<CartDTO> cartDTOList){
         productService.desStock(cartDTOList);
         return "ok";

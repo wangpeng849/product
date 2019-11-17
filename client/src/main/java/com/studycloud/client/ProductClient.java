@@ -1,4 +1,5 @@
-package com.studycloud.product.client;
+package com.studycloud.client;
+
 
 import com.studycloud.common.DecreaseStockInput;
 import com.studycloud.common.ProductInfoOutput;
