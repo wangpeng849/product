@@ -28,6 +28,8 @@ public class ProductController {
     @Autowired
     CategoryService categoryService;
 
+    //allowCredential允许cookie跨域
+    @CrossOrigin(allowCredentials = "true")
     @GetMapping("/list")
     public ResultVo<ProductVo> list() {
         //查询所有上架商品
@@ -68,7 +70,8 @@ public class ProductController {
      * @return
      */
     @PostMapping(value="/listForOrder")
-    public List<ProductInfo> listForOrder(@RequestBody List<String> productIdList){
+    public List<ProductInfo> listForOrder(@RequestBody List<String> productIdList) throws InterruptedException {
+        Thread.sleep(2000);
        return productService.findByProductIdIn(productIdList);
     }
 
